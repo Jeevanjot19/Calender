@@ -1,0 +1,36 @@
+from tkinter import *
+root=Tk()
+root.geometry("500x500")
+labela=Label(root,text="JANUARY",fg="blue",width=10,height=5).grid(row=0,column=0,padx=2,pady=2)
+labelb=Label(root,text="2021",fg="blue",width=10,height=5).grid(row=0,column=5,padx=2,pady=2)
+col=0
+list=["WEEK","1","2","3","4","5"]
+for x in range(6):
+    lbl=Label(root,text=list[x],fg="black",bg="#D3D3D3",width=10,height=2)
+    lbl.grid(row=1,column=col,padx=2,pady=2)
+    col+=1
+label0=Label(root,text="31",fg="blue",bg="#ADD8E6",width=10,height=5).grid(row=2,column=1,padx=2,pady=2)
+label1=Label(root,text="1",fg="blue",bg="#D3D3D3",width=10,height=5).grid(row=7,column=1,padx=2,pady=2)
+label2=Label(root,text="2",fg="black",bg="#D3D3D3",width=10,height=5).grid(row=8,column=1,padx=2,pady=2)
+lst=["SUN","MON","TUE","WED","THU","FRI","SAT"]
+r=3
+for x in range(7):
+    if x==0:
+        lbl=Label(root,text=lst[x],fg="Blue",bg="#ADD8E6",width=10,height=5).grid(row=2,column=0,padx=2,pady=2)
+    else:
+        lbl=Label(root,text=lst[x],fg="black",bg="#D3D3D3",width=10,height=5).grid(row=r,column=0,padx=2,pady=2)
+        r+=1
+r1,c1=2,2
+for x in range(3,31):
+    if x==3 or x==10 or x==17 or x==24 or x==13 or x==14 or x==9 or x==23 or x==26:
+        f="blue"
+        if x==3 or x==10 or x==17 or x==24:
+            b="#ADD8E6"
+    else:
+        f,b="black","#D3D3D3"
+    l=Label(root,text=str(x),fg=f,bg=b,width=10,height=5).grid(row=r1,column=c1,padx=2,pady=2)
+    r1+=1
+    if(x==9 or x==16 or x==23):
+        c1+=1
+        r1=2
+root.mainloop()
